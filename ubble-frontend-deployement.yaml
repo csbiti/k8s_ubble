@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ubble-frontend
+  name: ubble-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubble-frontend
+  template:
+    metadata:
+      labels:
+        app: ubble-frontend
+    spec:
+      containers:
+      - image: csbiti/formulaire_ubble_frontend:1.0.2-dev
+        imagePullPolicy: Always
+        name: formulaire-ubble-frontend
