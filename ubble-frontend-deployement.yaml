@@ -15,6 +15,6 @@ spec:
         app: ubble-frontend
     spec:
       containers:
-      - image: csbiti/formulaire_ubble_frontend:1.0.2-dev
+      - image: csbiti/formulaire_ubble_frontend:1.0.5-dev
         imagePullPolicy: Always
         name: formulaire-ubble-frontend

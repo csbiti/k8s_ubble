@@ -8,7 +8,6 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-    targetPort: 4200
+    targetPort: 80
   selector:
     app: ubble-frontend
-  type: LoadBalancer

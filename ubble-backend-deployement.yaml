@@ -15,7 +15,35 @@ spec:
         app: ubble-backend
     spec:
       containers:
-      - image: csbiti/formulaire_ubble_backend:1.0.0-dev
+      - image: csbiti/formulaire_ubble_backend:1.0.4-dev
         imagePullPolicy: Always
         name: formulaire-ubble-backend
+        env:
+          - name: UBBLE_USE_POSTGRES
+            value: "true"
+          - name: UBBLE_DB_USER
+            valueFrom:
+              configMapKeyRef:
+                name: postgres-config
+                key: db_user
+          - name: UBBLE_DB_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: postgres-config
+                key: db_password
+          - name: UBBLE_DB_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: postgres-config
+                key: db_host
+          - name: UBBLE_DB_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: postgres-config
+                key: db_port
+          - name: UBBLE_DB_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: postgres-config
+                key: db_name
       restartPolicy: Always
