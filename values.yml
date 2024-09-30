@@ -1,0 +1,12 @@
+primary:
+  persistence:
+    enabled: false
+  initdb:
+    scriptsConfigMap: "postgres-init-db"
+
+auth:
+  database: "postgres"
+  password: "pass4Dev"
+  username: "usrdev"
+  postgresPassword: "admin123"
+  enablePostgresUser: true
